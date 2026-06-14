@@ -64,7 +64,6 @@
     "vite-plugin-ruby": "^5.2.0",
     "vite-plugin-wasm": "^3.6.0"
   },
-  "packageManager": "yarn@3.8.5",
   "browserslist": [
     "defaults"
   ],
