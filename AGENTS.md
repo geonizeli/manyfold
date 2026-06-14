@@ -45,6 +45,10 @@ Small mechanical fixes may use a shorter spec, but the intent and verification p
 - Keep generated explanations concise and tied to the spec.
 - Update the active spec when implementation diverges from the original plan.
 
+## Commit Messages
+
+- For AI-assisted commits, include the model used in the commit message, for example `Model used: GPT-5 Codex`.
+
 ## Default Agent Workflow
 
 1. Read the relevant files and any existing spec.

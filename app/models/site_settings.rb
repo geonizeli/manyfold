@@ -57,7 +57,18 @@ class SiteSettings < RailsSettings::Base
   field :cults3d_api_key, type: :string
   field :cults3d_api_username, type: :string
 
+  FOOTER_TYPES = %w[default minimalist none].freeze
+  DEFAULT_FOOTER_TYPE = "default"
+
   validates :model_ignored_files, regex_array: {strict: true}
+
+  def self.footer_type
+    ENV.fetch("FOOT_TYPE", DEFAULT_FOOTER_TYPE).presence_in(FOOTER_TYPES) || DEFAULT_FOOTER_TYPE
+  end
+
+  def self.footer_visible?
+    footer_type != "none"
+  end
 
   def self.email_configured?
     !Rails.env.production? || ENV.fetch("SMTP_SERVER", false)
